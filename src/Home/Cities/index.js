@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import Card from "./CityCard";
+import CityCard from "./CityCard";
 import { CardCity } from "./CityCard";
 
 import compass from "./compass.svg";
 import pen from "./pen.svg";
-
 import anywhere from "./anywhere.svg";
 import sea from "./sea.svg";
 import shoping from "./shoping.svg";
@@ -14,6 +13,16 @@ import culture from "./culture.svg";
 import nightlife from "./nightlife.svg";
 import rest from "./rest.svg";
 import calendar from "./calendar.svg";
+
+import krasnodar from "./krasnodar.jpg";
+import sochi from "./sochi.jpg";
+import petersburg from "./petersburg.jpg";
+import mineral from "./mineral.jpg";
+import simferopol from "./simferopol.jpg";
+import barcelona from "./barcelona.jpg";
+
+import russia from "./russia.jpg";
+import spain from "./spain.jpg";
 
 const Cities = styled.div`
   background: #f8fcff;
@@ -74,7 +83,7 @@ const NavImgBackground = styled.div`
 `;
 const NavElementImg = styled.img``;
 
-const CitiesCard = styled.div`
+const Cards = styled.div`
   display: flex;
   margin-top: 55px;
   flex-wrap: wrap;
@@ -135,18 +144,57 @@ export default function(props) {
             </NavImgBackground>ОТДЫХ С ДЕТЬМИ
           </NavElement>
         </Navigation>
-        <CitiesCard>
-          {CardCity(shoping)}
-          {CardCity(culture)}
-          {CardCity(culture)}
-          {CardCity(culture)}
-          {CardCity(culture)}
-          {CardCity(culture)}
-        </CitiesCard>
+        <Cards>
+          <CityCard
+            img={krasnodar}
+            flag={russia}
+            city="Краснодар"
+            country="РОССИЯ"
+            price="1 212"
+            date="18 марта"
+          />
+          <CityCard
+            img={sochi}
+            flag={russia}
+            city="Сочи (Адлер)"
+            country="РОССИЯ"
+            price="1 334"
+            date="27 марта"
+          />
+          <CityCard
+            img={petersburg}
+            flag={russia}
+            city="Санкт-Петербург"
+            country="РОССИЯ"
+            price="1 508"
+            date="19 февраля"
+          />
+          <CityCard
+            img={mineral}
+            flag={russia}
+            city="Минеральные воды"
+            country="РОССИЯ"
+            price="2 074"
+            date="13 марта"
+          />
+          <CityCard
+            img={simferopol}
+            flag={russia}
+            city="Симферополь (Крым)"
+            country="РОССИЯ"
+            price="2 407"
+            date="24 марта"
+          />
+          <CityCard
+            img={barcelona}
+            flag={spain}
+            city="Барселона"
+            country="ИСПАНИЯ"
+            price="4 247"
+            date="24 марта"
+          />
+        </Cards>
         <CalendarImg src={calendar} />
-        <LostMonthTitle>
-          Лучшие цены на авиабилеты за последний месяц
-        </LostMonthTitle>
       </Container>
     </Cities>
   );
