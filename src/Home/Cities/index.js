@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+import Card from "./CityCard";
+import { CardCity } from "./CityCard";
+
 import compass from "./compass.svg";
 import pen from "./pen.svg";
 
@@ -10,6 +13,7 @@ import shoping from "./shoping.svg";
 import culture from "./culture.svg";
 import nightlife from "./nightlife.svg";
 import rest from "./rest.svg";
+import calendar from "./calendar.svg";
 
 const Cities = styled.div`
   background: #f8fcff;
@@ -70,6 +74,26 @@ const NavImgBackground = styled.div`
 `;
 const NavElementImg = styled.img``;
 
+const CitiesCard = styled.div`
+  display: flex;
+  margin-top: 55px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 35px;
+`;
+
+const CalendarImg = styled.img``;
+
+const LostMonthTitle = styled.text`
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 36px;
+  font-size: 24px;
+  text-align: center;
+  color: #4a4a4a;
+  margin-top: 20px;
+`;
+
 export default function(props) {
   return (
     <Cities>
@@ -111,6 +135,18 @@ export default function(props) {
             </NavImgBackground>ОТДЫХ С ДЕТЬМИ
           </NavElement>
         </Navigation>
+        <CitiesCard>
+          {CardCity(shoping)}
+          {CardCity(culture)}
+          {CardCity(culture)}
+          {CardCity(culture)}
+          {CardCity(culture)}
+          {CardCity(culture)}
+        </CitiesCard>
+        <CalendarImg src={calendar} />
+        <LostMonthTitle>
+          Лучшие цены на авиабилеты за последний месяц
+        </LostMonthTitle>
       </Container>
     </Cities>
   );
