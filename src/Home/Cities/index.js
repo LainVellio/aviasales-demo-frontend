@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import CityCard from "./CityCard";
 import Nav from "./Navigation";
+import BestPrice from "./BestPrice";
 
 import compass from "./compass.svg";
 import pen from "./pen.svg";
@@ -13,6 +14,7 @@ import culture from "./culture.svg";
 import nightlife from "./nightlife.svg";
 import rest from "./rest.svg";
 import calendar from "./calendar.svg";
+import path from "./path.svg";
 
 import krasnodar from "./krasnodar.jpg";
 import sochi from "./sochi.jpg";
@@ -21,8 +23,10 @@ import mineral from "./mineral.jpg";
 import simferopol from "./simferopol.jpg";
 import barcelona from "./barcelona.jpg";
 
-import russia from "./russia.jpg";
-import spain from "./spain.jpg";
+import russia from "./russia.png";
+import spain from "./spain.png";
+import armenia from "./armenia.png";
+import moldavia from "./moldavia.png";
 
 const Cities = styled.div`
   background: #f8fcff;
@@ -57,29 +61,7 @@ const Navigation = styled.div`
   justify-content: center;
 `;
 
-const Cards = styled.div`
-  display: flex;
-  margin-top: 55px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 35px;
-`;
-
 const CalendarImg = styled.img``;
-
-const LostMonthTitle = styled.text`
-  font-family: Roboto;
-  font-weight: 500;
-  line-height: 36px;
-  font-size: 24px;
-  text-align: center;
-  color: #4a4a4a;
-  margin-top: 20px;
-`;
-
-const Container = styled.div`
-  width: 1244px;
-`;
 
 const TitleBestPrice = styled.div`
   font-family: Roboto;
@@ -89,6 +71,23 @@ const TitleBestPrice = styled.div`
   color: #4a4a4a;
   margin-bottom: 50px;
 `;
+
+const BestPriceCenter = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const PathLeft = styled.div`
+  padding-right: 32px;
+  padding-left: 16px;
+`;
+
+const PathRight = styled.div`
+  padding-right: 16px;
+  padding-left: 32px;
+`;
+
+const PathImg = styled.img``;
 
 export default function(props) {
   return (
@@ -164,10 +163,72 @@ export default function(props) {
             />
           </div>
           <CalendarImg src={calendar} />
+
+          <TitleBestPrice>
+            Лучшие цены на авиабилеты за последний месяц
+          </TitleBestPrice>
+          <div className="row center-xs">
+            <div className="col-xl-3">
+              <BestPrice
+                img={russia}
+                country="РОССИЯ"
+                city="Симферополь (Крым)"
+                city1="Москвы"
+                price1="4 813"
+                city2="Санкт-Петербурга"
+                price2="7 857"
+                city3="Новосибирска"
+                price3="15 127"
+                city4="Екатеринбурга"
+                price4="9 275"
+                city5="Челябинска"
+                price5="9 148"
+              />
+            </div>
+            <div className="col-xl-4">
+              <BestPriceCenter>
+                <PathLeft>
+                  <PathImg src={path} />
+                </PathLeft>
+                <BestPrice
+                  img={armenia}
+                  country="АРМЕНИЯ"
+                  city="Ереван"
+                  city1="Москвы"
+                  price1="6 758"
+                  city2="Санкт-Петербурга"
+                  price2="9 932"
+                  city3="Сочи"
+                  price3="11 951"
+                  city4="Краснодара"
+                  price4="11 741"
+                  city5="Ростова-на-Дону"
+                  price5="11 956"
+                />
+                <PathRight>
+                  <PathImg src={path} />
+                </PathRight>
+              </BestPriceCenter>
+            </div>
+            <div className="col-xl-3">
+              <BestPrice
+                img={moldavia}
+                country="МОЛДАВИЯ"
+                city="Кишинёв"
+                city1="Москвы"
+                price1="8 319"
+                city2="Санкт-Петербурга"
+                price2="10 800"
+                city3="Краснодара"
+                price3="12 098"
+                city4="Сургута"
+                price4="16 277"
+                city5="Нового Уренгоя"
+                price5="15 987"
+              />
+            </div>
+          </div>
         </div>
-        <TitleBestPrice>
-          Лучшие цены на авиабилеты за последний месяц
-        </TitleBestPrice>
       </div>
     </Cities>
   );
