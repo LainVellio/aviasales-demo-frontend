@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import CityCard from "./CityCard";
-import { CardCity } from "./CityCard";
+import Nav from "./Navigation";
 
 import compass from "./compass.svg";
 import pen from "./pen.svg";
@@ -27,13 +27,11 @@ import spain from "./spain.jpg";
 const Cities = styled.div`
   background: #f8fcff;
   padding-top: 56px;
-  height: 1414px;
 `;
 
-const Container = styled.div`
+const Compass = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 `;
 
 const CompassImg = styled.img`
@@ -55,33 +53,9 @@ const Pen = styled.img``;
 const Navigation = styled.div`
   display: flex;
   margin-top: 56px;
-`;
-const NavElement = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 70px;
-  margin-right: 56px;
-  text-align: center;
-  font-family: Roboto;
-  line-height: 20px;
-  font-size: 12px;
-  color: #00ace2;
-  font-style: normal;
-  font-weight: normal;
-`;
-const NavImgBackground = styled.div`
-  display: flex;
-  background: #ffffff;
-  box-shadow: 0px 4px 16px rgba(74, 74, 74, 0.12);
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  align-items: center;
+  margin-bottom: 58px;
   justify-content: center;
-  margin-bottom: 12px;
 `;
-const NavElementImg = styled.img``;
 
 const Cards = styled.div`
   display: flex;
@@ -103,99 +77,98 @@ const LostMonthTitle = styled.text`
   margin-top: 20px;
 `;
 
+const Container = styled.div`
+  width: 1244px;
+`;
+
+const TitleBestPrice = styled.div`
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 36px;
+  font-size: 24px;
+  color: #4a4a4a;
+  margin-bottom: 50px;
+`;
+
 export default function(props) {
   return (
     <Cities>
-      <Container className="container">
-        <CompassImg src={compass} />
-        <Title>Популярные направления перелетов</Title>
-        <Title>
-          из города Москва <Pen src={pen} />
-        </Title>
-        <Navigation>
-          <NavElement>
-            <NavImgBackground>
-              <NavElementImg src={anywhere} />
-            </NavImgBackground>КУДА УГОДНО
-          </NavElement>
-          <NavElement>
-            <NavImgBackground>
-              <NavElementImg src={sea} />
-            </NavImgBackground>СОЛНЦЕ И МОРЕ
-          </NavElement>
-          <NavElement>
-            <NavImgBackground>
-              <NavElementImg src={shoping} />
-            </NavImgBackground>ШОПИНГ, ГОРОД
-          </NavElement>
-          <NavElement>
-            <NavImgBackground>
-              <NavElementImg src={culture} />
-            </NavImgBackground>КУЛЬТУРА И ИСТОРИЯ
-          </NavElement>
-          <NavElement>
-            <NavImgBackground>
-              <NavElementImg src={nightlife} />
-            </NavImgBackground>НОЧНАЯ ЖИЗНЬ
-          </NavElement>
-          <NavElement>
-            <NavImgBackground>
-              <NavElementImg src={rest} />
-            </NavImgBackground>ОТДЫХ С ДЕТЬМИ
-          </NavElement>
-        </Navigation>
-        <Cards>
-          <CityCard
-            img={krasnodar}
-            flag={russia}
-            city="Краснодар"
-            country="РОССИЯ"
-            price="1 212"
-            date="18 марта"
-          />
-          <CityCard
-            img={sochi}
-            flag={russia}
-            city="Сочи (Адлер)"
-            country="РОССИЯ"
-            price="1 334"
-            date="27 марта"
-          />
-          <CityCard
-            img={petersburg}
-            flag={russia}
-            city="Санкт-Петербург"
-            country="РОССИЯ"
-            price="1 508"
-            date="19 февраля"
-          />
-          <CityCard
-            img={mineral}
-            flag={russia}
-            city="Минеральные воды"
-            country="РОССИЯ"
-            price="2 074"
-            date="13 марта"
-          />
-          <CityCard
-            img={simferopol}
-            flag={russia}
-            city="Симферополь (Крым)"
-            country="РОССИЯ"
-            price="2 407"
-            date="24 марта"
-          />
-          <CityCard
-            img={barcelona}
-            flag={spain}
-            city="Барселона"
-            country="ИСПАНИЯ"
-            price="4 247"
-            date="24 марта"
-          />
-        </Cards>
-        <CalendarImg src={calendar} />
-      </Container>
+      <div className="row center-xs">
+        <div className="container">
+          <Compass>
+            <CompassImg src={compass} />
+          </Compass>
+          <Title>Популярные направления перелетов</Title>
+          <Title>
+            из города Москва <Pen src={pen} />
+          </Title>
+
+          <Navigation>
+            <Nav img={anywhere} text="КУДА УГОДНО" />
+            <Nav img={sea} text="СОЛНЦЕ И МОРЕ" />
+            <Nav img={shoping} text="ШОПИНГ, ГОРОД" />
+            <Nav img={culture} text="КУЛЬТУРА И ИСТОРИЯ" />
+            <Nav img={nightlife} text="НОЧНАЯ ЖИЗНЬ" />
+            <Nav img={rest} text="ОТДЫХ С ДЕТЬМИ" />
+          </Navigation>
+
+          <div className="row center-xs">
+            <CityCard
+              img={krasnodar}
+              flag={russia}
+              city="Краснодар"
+              country="РОССИЯ"
+              price="1 212"
+              date="18 марта"
+            />
+
+            <CityCard
+              img={sochi}
+              flag={russia}
+              city="Сочи (Адлер)"
+              country="РОССИЯ"
+              price="1 334"
+              date="27 марта"
+            />
+            <CityCard
+              img={petersburg}
+              flag={russia}
+              city="Санкт-Петербург"
+              country="РОССИЯ"
+              price="1 508"
+              date="19 февраля"
+            />
+            <CityCard
+              img={mineral}
+              flag={russia}
+              city="Минеральные воды"
+              country="РОССИЯ"
+              price="2 074"
+              date="13 марта"
+            />
+            <CityCard
+              img={simferopol}
+              flag={russia}
+              city="Симферополь (Крым)"
+              country="РОССИЯ"
+              price="2 407"
+              date="24 марта"
+            />
+            <CityCard
+              img={barcelona}
+              flag={spain}
+              city="Барселона"
+              country="ИСПАНИЯ"
+              price="4 247"
+              date="24 марта"
+            />
+          </div>
+          <CalendarImg src={calendar} />
+        </div>
+        <TitleBestPrice>
+          Лучшие цены на авиабилеты за последний месяц
+        </TitleBestPrice>
+      </div>
     </Cities>
   );
 }

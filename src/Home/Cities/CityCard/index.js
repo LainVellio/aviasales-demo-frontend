@@ -2,20 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 const Card = styled.div`
-  display: flex;
   height: 293px;
   background: #ffffff;
   box-shadow: 0px 2px 12px rgba(0, 75, 93, 0.12);
   border-radius: 8px;
-  margin-right: 15px;
   margin-bottom: 31px;
-  flex-direction: column;
 `;
 
 const CardImg = styled.img`
   height: 212px;
   margin-bottom: 12px;
   border-radius: 8px 8px 0 0;
+  max-width: 100%;
 `;
 
 const FlagAndCity = styled.div`
@@ -37,7 +35,7 @@ const City = styled.div`
   font-family: Roboto;
   font-weight: bold;
   line-height: 32px;
-  font-size: 22px;
+  font-size: 20px;
   color: #5b5b5c;
   margin-left: 18px;
   text-align: left;
@@ -45,14 +43,12 @@ const City = styled.div`
 `;
 
 const Price = styled.div`
-  display: flex;
   font-family: Roboto;
   line-height: 32px;
-  font-size: 22px;
+  font-size: 20px;
   text-align: right;
   color: #00bae8;
-  flex-direction: column;
-  margin-right: 22px;
+  padding-right: 24px;
 `;
 
 const Country = styled.div`
@@ -74,11 +70,11 @@ const Date = styled.div`
 
 export default props => {
   return (
-    <div className="col-5">
+    <div className="col-xs-5">
       <Card>
         <CardImg src={props.img} />
         <CardInfo>
-          <FlagAndCity className="col-3">
+          <FlagAndCity>
             <div>
               <FlagImg src={props.flag} />
             </div>
@@ -87,7 +83,7 @@ export default props => {
               <Country>{props.country}</Country>
             </City>
           </FlagAndCity>
-          <Price className="col-2">
+          <Price>
             Найти от {props.price} ₽ <Date>{props.date}</Date>
           </Price>
         </CardInfo>
