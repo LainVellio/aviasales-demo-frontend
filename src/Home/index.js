@@ -1,13 +1,15 @@
 import React from "react";
 
 import Header from "./Header";
-import Cities from "./Cities";
+import Destination from "./Destination";
+import BestPrice from "./BestPrice";
 
 export default function() {
   return (
     <div>
       <Header />
-      <Cities />
+      <Destination />
+      <BestPrice />
     </div>
   );
 }

@@ -1,13 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const BestPrice = styled.div`
-  width: 100%;
-`;
-
 const Title = styled.div`
   display: flex;
-  flex-direction: row;
   margin-bottom: 24px;
   justify-content: flex-start;
 `;
@@ -54,7 +49,7 @@ const Price = styled.div`
 
 export default props => {
   return (
-    <BestPrice>
+    <div>
       <Title>
         <div>
           <CountryImg src={props.img} />
@@ -87,6 +82,6 @@ export default props => {
         <City>Из {props.city5}</City>
         <Price>от {props.price5} ₽</Price>
       </DepartureCity>
-    </BestPrice>
+    </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Element = styled.div`
+const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,12 +28,12 @@ const Img = styled.img``;
 export default props => {
   return (
     <div className="col-lg-1">
-      <Element>
+      <Wrap>
         <Background>
           <Img src={props.img} />
         </Background>
         <div>{props.text}</div>
-      </Element>
+      </Wrap>
     </div>
   );
 };

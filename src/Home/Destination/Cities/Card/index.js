@@ -16,22 +16,11 @@ const CardImg = styled.img`
   max-width: 100%;
 `;
 
-const FlagAndCity = styled.div`
-  display: flex;
-`;
-
-const CardInfo = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
 const FlagImg = styled.img`
-  margin-left: 16px;
+  margin-left: 24px;
 `;
 
 const City = styled.div`
-  display: flex;
   font-family: Roboto;
   font-weight: bold;
   line-height: 32px;
@@ -39,7 +28,6 @@ const City = styled.div`
   color: #5b5b5c;
   margin-left: 18px;
   text-align: left;
-  flex-direction: column;
 `;
 
 const Price = styled.div`
@@ -73,20 +61,20 @@ export default props => {
     <div className="col-xs-5">
       <Card>
         <CardImg src={props.img} />
-        <CardInfo>
-          <FlagAndCity>
+        <div className="row between-lg">
+          <div className="row">
             <div>
               <FlagImg src={props.flag} />
             </div>
             <City>
-              {props.city}
+              <div>{props.city}</div>
               <Country>{props.country}</Country>
             </City>
-          </FlagAndCity>
+          </div>
           <Price>
             Найти от {props.price} ₽ <Date>{props.date}</Date>
           </Price>
-        </CardInfo>
+        </div>
       </Card>
     </div>
   );
