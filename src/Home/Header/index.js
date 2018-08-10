@@ -23,9 +23,7 @@ export default props => {
     <Header>
       <div className="container">
         <Logo />
-        <div className="row center-lg">
-          <Title />
-        </div>
+        <Title />
       </div>
     </Header>
   );

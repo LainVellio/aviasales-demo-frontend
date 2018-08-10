@@ -3,35 +3,37 @@ import styled from "styled-components";
 
 import plane from "./Plane.svg";
 
+const Wrap = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+`;
+
 const CityDeparture = styled.input`
   border-radius: 4px 0 0 4px;
   border: none;
-  size: 224px;
   padding-top: 18px;
   padding-bottom: 18px;
   padding-left: 16px;
   margin-right: 2px;
-  align-self: baseline;
+  width: 20%;
 `;
 
 const CityArrival = styled.input`
   border: none;
-  size: 224px;
   padding-top: 18px;
   padding-bottom: 18px;
   padding-left: 16px;
   margin-right: 2px;
-  align-self: baseline;
+  width: 20%;
 `;
 
 const DateDeparture = styled.input`
   border: none;
-  size: 224px;
   padding-top: 18px;
   padding-bottom: 18px;
   padding-left: 16px;
   margin-right: 2px;
-  align-self: baseline;
+  width: 20%;
 `;
 
 const DateArrival = styled.input`
@@ -40,7 +42,7 @@ const DateArrival = styled.input`
   padding-bottom: 18px;
   padding-left: 16px;
   margin-right: 2px;
-  align-self: baseline;
+  width: 20%;
 `;
 
 const Passengers = styled.select`
@@ -48,8 +50,8 @@ const Passengers = styled.select`
   padding-top: 17px;
   padding-bottom: 18px;
   padding-left: 16px;
-  padding-right: 45px;
   border-radius: 0 4px 4px 0;
+  width: 20%;
 `;
 
 const Button = styled.button`
@@ -74,13 +76,21 @@ const ButtonImg = styled.img`
 export default function() {
   return (
     <div className="row center-lg">
-      <CityDeparture />
-      <CityArrival />
-      <DateDeparture />
-      <DateArrival />
-      <Passengers>
-        <option>1 пассажир</option>
-      </Passengers>
+      <div className="col-lg-10">
+        <Wrap>
+          <CityDeparture />
+
+          <CityArrival />
+
+          <DateDeparture />
+
+          <DateArrival />
+
+          <Passengers>
+            <option> 1 пассажир, эконом </option>
+          </Passengers>
+        </Wrap>
+      </div>
       <Button>
         Найти билеты
         <ButtonImg src={plane} />

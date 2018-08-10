@@ -13,6 +13,7 @@ const TitleTop = styled.div`
   font-size: 40px;
   line-height: 48px;
   color: #ffffff;
+  text-align: center;
 `;
 const TitleBottom = styled.div`
   font-family: Roboto, sans-serif;
@@ -21,6 +22,7 @@ const TitleBottom = styled.div`
   line-height: 28px;
   color: #ffffff;
   margin-bottom: 40px;
+  text-align: center;
 `;
 
 export default function() {
