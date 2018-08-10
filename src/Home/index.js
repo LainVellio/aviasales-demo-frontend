@@ -5,6 +5,7 @@ import Destination from "./Destination";
 import BestPrice from "./BestPrice";
 import Information from "./Information";
 import Mobile from "./Mobile";
+import Footer from "./Footer";
 
 export default function() {
   return (
@@ -14,6 +15,7 @@ export default function() {
       <BestPrice />
       <Information />
       <Mobile />
+      <Footer />
     </div>
   );
 }

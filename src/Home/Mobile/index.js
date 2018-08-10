@@ -17,6 +17,7 @@ const Wrap = styled.div`
   margin-top: 40px;
   align-items: flex-end;
   justify-content: center;
+  margin-bottom: 45px;
 `;
 
 const Img = styled.img``;
