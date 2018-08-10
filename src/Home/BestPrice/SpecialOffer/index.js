@@ -22,12 +22,37 @@ const Title = styled.div`
   padding-bottom: 20px;
 `;
 
+const Text = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 23px;
+`;
+
+const TextLeft = styled.div`
+  font-family: Roboto;
+  line-height: 20px;
+  font-size: 16px;
+  text-decoration-line: underline;
+  color: #ffffff;
+`;
+
+const TextRight = styled.div`
+  font-family: Roboto;
+  line-height: 20px;
+  font-size: 16px;
+  text-align: right;
+  color: #ffffff;
+`;
+
 export default function() {
   return (
     <Background>
       <div className="container">
-        <div className="col-lg-offset-1">
-          <Title>Спецпредложения на авиабилеты</Title>
+        <div className="row">
+          <div className="col-lg-offset-1">
+            <Title>Спецпредложения на авиабилеты</Title>
+          </div>
         </div>
         <div className="row">
           <div className="col-lg-4">
@@ -65,6 +90,14 @@ export default function() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+        <div className="row center-lg">
+          <div className="col-lg-10">
+            <Text>
+              <TextLeft>Смотреть все спецпредложения</TextLeft>
+              <TextRight>*средняя цена по направлению</TextRight>
+            </Text>
           </div>
         </div>
       </div>
