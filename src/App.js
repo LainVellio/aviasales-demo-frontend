@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import "./Fonts/index.css";
 
 import Home from "./Home";
+import Search from "./Search";
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact component={Search} />
           </div>
         </BrowserRouter>
       </div>
